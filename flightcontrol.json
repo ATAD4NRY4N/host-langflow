@@ -3,7 +3,7 @@
   "environments": [
     {
       "name": "production",
-      "region": "us-west-2",
+      "region": "us-east-2",
       "vpc": {
         "endpoints": {
           "ssm": true
