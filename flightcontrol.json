@@ -14,7 +14,7 @@
           "id": "langflow-web",
           "name": "Web server",
           "type": "fargate",
-          "public": false,
+          "public": true,
           "dockerfile": "./Dockerfile",
           "cpu": 0.5,
           "memory": 1,
