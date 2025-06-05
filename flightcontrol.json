@@ -1,0 +1,33 @@
+{
+  "$schema": "https://flightcontrol.dev/schema.json",
+  "environments": [
+    {
+      "name": "production",
+      "region": "us-west-2",
+      "vpc": {
+        "endpoints": {
+          "ssm": true
+        }
+      },
+      "services": [
+        {
+          "id": "langflow-web",
+          "name": "Web server",
+          "type": "fargate",
+          "public": false,
+          "dockerfile": "./Dockerfile",
+          "cpu": 0.5,
+          "memory": 1,
+          "port": 7860,
+          "healthCheck": {
+            "path": "/health",
+            "gracePeriodSeconds": 120,
+            "timeoutSeconds": 30,
+            "intervalSeconds": 60
+          },
+          "enableExecuteCommand": true
+        }
+      ]
+    }
+  ]
+}
