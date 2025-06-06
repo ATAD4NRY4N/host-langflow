@@ -14,7 +14,7 @@
           "id": "langflow-web",
           "name": "Web server",
           "type": "fargate",
-          "public": true,
+          "public": false,
           "dockerfile": "./Dockerfile",
           "cpu": 0.5,
           "memory": 1,
@@ -26,6 +26,16 @@
             "intervalSeconds": 60
           },
           "enableExecuteCommand": true
+        },
+        {
+          "id": "bastion",
+          "name": "Bastion Host",
+          "type": "ec2",
+          "public": true,
+          "instanceType": "t3.micro",
+          "ami": "ami-00eab0beb9d4cb37d",
+          "keyPair": "langflow-bastion",
+          "userData": "#!/bin/bash\nyum update -y\nyum install -y socat\n# Install AWS CLI v2\ncurl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o 'awscliv2.zip'\nunzip awscliv2.zip\n./aws/install"
         }
       ]
     }
