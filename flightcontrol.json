@@ -35,7 +35,7 @@
           "instanceType": "t3.micro",
           "ami": "ami-00eab0beb9d4cb37d",
           "keyPair": "langflow-bastion",
-          "userData": "#!/bin/bash\nyum update -y\nyum install -y socat\n# Install AWS CLI v2\ncurl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o 'awscliv2.zip'\nunzip awscliv2.zip\n./aws/install"
+          "userData": "#!/bin/bash\ndnf update -y\ndnf install -y socat\n# Install AWS CLI v2\ncurl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o 'awscliv2.zip'\nunzip awscliv2.zip\n./aws/install"
         }
       ]
     }
