@@ -26,6 +26,15 @@
             "intervalSeconds": 60
           },
           "enableExecuteCommand": true
+        },
+        {
+          "id": "bastion",
+          "name": "Bastion Host",
+          "type": "ec2",
+          "public": true,
+          "instanceType": "t3.micro",
+          "ami": "ami-0c55b159cbfafe1f0", 
+          "keyPair": "langflow-bastion"
         }
       ]
     }
